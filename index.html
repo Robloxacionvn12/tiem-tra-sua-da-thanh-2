@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#fff0d8">
+<title>Tiệm Trà Sữa & Ăn Vặt Đà Thành</title>
+<style>
+:root{--ink:#49342b;--cream:#fff8ec;--pink:#ff8e9c;--orange:#ffbd68;--green:#6ebd85;--blue:#83c8e8;--line:#e8c7a2}
+*{box-sizing:border-box}body{margin:0;background:#f7e8d2;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+button{font:inherit;border:0;border-radius:14px;padding:10px 12px;background:#ffcc7d;color:#503728;font-weight:800;box-shadow:0 3px 0 #d9a45b;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}button.secondary{background:#d6eee1;box-shadow:0 3px 0 #a3cfb4}button.pink{background:#ffc3ce;box-shadow:0 3px 0 #e99ba9}
+.wrap{max-width:1000px;margin:auto;padding:10px}.top{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}.stat{background:var(--cream);border:2px solid var(--line);border-radius:16px;padding:10px;text-align:center;font-weight:900}.stat small{display:block;font-weight:700;color:#896b58}
+.scene{background:linear-gradient(#b8e5f3 0 34%,#8fc58b 34% 49%,#e9c89d 49% 62%,#b77e52 62%);border:3px solid #d4a87a;border-radius:20px;overflow:hidden;min-height:280px;position:relative;padding:12px}
+.school{text-align:center;font-weight:1000;color:#6e8e9a;text-shadow:1px 1px #fff;font-size:clamp(16px,4vw,26px)}
+.cloud{position:absolute;top:18px;left:8%;font-size:30px;opacity:.8}.sun{position:absolute;right:8%;top:15px;font-size:35px}
+.stall{margin:24px auto 0;max-width:600px;background:#ffdfaa;border:4px solid #b8794c;border-radius:18px 18px 8px 8px;padding:12px;position:relative;box-shadow:0 8px 0 #9d613c}
+.awning{background:repeating-linear-gradient(90deg,#ff9a9e 0 48px,#fff0d8 48px 96px);height:22px;border-radius:10px;margin:-8px -8px 8px}
+.sign{text-align:center;font-weight:1000;font-size:clamp(17px,4vw,25px);color:#b44d5a}
+.counter{display:flex;gap:8px;justify-content:space-around;align-items:end;background:#c88b59;padding:10px;border-radius:10px;flex-wrap:wrap}
+.item{background:#fff7e9;border:2px solid #e4b887;border-radius:13px;padding:8px;text-align:center;min-width:80px;flex:1;font-size:13px;font-weight:800}
+.emoji{font-size:31px;display:block}.seats{display:flex;justify-content:space-evenly;gap:6px;margin:10px auto 0;max-width:650px;flex-wrap:wrap}.seat{background:#e7b3aa;border:2px solid #a86e61;border-radius:8px;padding:7px 9px;font-size:12px}
+.customers{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px}.customer{background:#fffaf0;border:2px solid #e5c39d;border-radius:15px;padding:8px;min-width:140px;max-width:220px;flex:1;font-size:13px}.customer strong{font-size:14px}.customer .order{color:#9b5b40;font-weight:800;margin:4px 0}
+.panel{background:var(--cream);border:2px solid var(--line);border-radius:18px;padding:12px;margin-top:10px}.tabs{display:flex;gap:6px;overflow:auto;padding:3px 2px 8px}.tabs button{white-space:nowrap;font-size:13px}.tabs button.active{background:#ff9ca7;box-shadow:0 3px 0 #d86c7a}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}.card{background:#fff;border:2px solid #efd6b5;border-radius:14px;padding:10px}.card h3{margin:3px 0;font-size:15px}.muted{color:#8c7462;font-size:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.card button{width:100%;margin-top:7px}.log{max-height:145px;overflow:auto;font-size:13px;line-height:1.5}.bottom{font-size:12px;color:#8b715e;text-align:center;padding:14px}
+.modal{position:fixed;inset:0;background:#3b2927a8;display:none;align-items:center;justify-content:center;padding:15px;z-index:5}.modal.show{display:flex}.modalbox{background:var(--cream);border-radius:20px;padding:18px;max-width:480px;width:100%;border:3px solid var(--line);max-height:85vh;overflow:auto}.modalbox h2{margin-top:0}
+@media(max-width:500px){.wrap{padding:7px}.top{gap:5px}.stat{padding:8px 4px;font-size:13px}.scene{padding:8px;min-height:250px}.stall{margin-top:25px;padding:8px}.item{min-width:68px;padding:5px}.emoji{font-size:25px}.panel{padding:9px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.customer{min-width:125px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="stat">📅 <span id="day">Ngày 1</span><small id="dateLabel">Ngày khai trương</small></div>
+    <div class="stat">🕕 <span id="clock">06:00</span><small>Giờ bán · đến 23:59</small></div>
+    <div class="stat">💵 <span id="money">700.000đ</span><small>💛 Cấp <span id="level">1</span> · ⭐ <span id="xp">0</span> XP</small></div>
+  </div>
+  <section class="scene">
+    <div class="cloud">☁️</div><div class="sun">☀️</div>
+    <div class="school">🏫 TRƯỜNG HỌC ĐÀ THÀNH</div>
+    <div class="stall">
+      <div class="awning"></div><div class="sign">🧋 TIỆM TRÀ SỮA & ĂN VẶT</div>
+      <div class="counter">
+        <div class="item"><span class="emoji">🧋</span>Trà sữa</div>
+        <div class="item"><span class="emoji">🍢</span>Đồ chiên</div>
+        <div class="item"><span class="emoji">🧋</span>Topping</div>
+      </div>
+    </div>
+    <div class="seats"><div class="seat">🪑 Bàn 1</div><div class="seat">🪑 Bàn 2</div><div class="seat">🪑 Bàn 3</div><div class="seat">🪑 Bàn 4</div></div>
+    <div class="customers" id="customers"></div>
+  </section>
+  <section class="panel">
+    <div class="row"><h2 style="margin:2px 0 8px;font-size:19px">📋 Quản lý tiệm</h2><button class="pink" id="nextDay">🌙 Chốt ngày</button></div>
+    <div class="tabs" id="tabs">
+      <button class="active" data-tab="orders">🛎️ Khách & order</button><button data-tab="stock">📦 Nhập kho</button><button data-tab="menu">🔓 Mở khóa món</button><button data-tab="staff">👩‍🍳 Nhân viên</button><button data-tab="upgrade">🏡 Nâng cấp</button>
+    </div>
+    <div id="content"></div>
+  </section>
+  <section class="panel">
+    <div class="row"><h3 style="margin:0">📒 Nhật ký kinh doanh</h3><button class="secondary" id="saveBtn">💾 Lưu</button></div>
+    <div class="log" id="log"></div>
+  </section>
+  <div class="bottom">Bản chơi thử 0.1 · Tiến trình lưu trên trình duyệt này · Game hư cấu lấy cảm hứng từ quán ăn vặt Việt Nam.</div>
+</div>
+<div class="modal" id="modal"><div class="modalbox" id="modalbox"></div></div>
+<script>
+const moneyFmt=n=>Math.round(n).toLocaleString('vi-VN')+'đ';
+const names=['Tuấn Kiệt','Ngọc Anh','Đức Huy','Khánh Linh','Thanh Tùng','Gia Hân','Minh Khang','Bảo Trân','Quốc Bảo','Thảo Vy','Hoàng Nam','Phương Nhi','Nhật Minh','Hà My','Trung Kiên','Mai Chi','Anh Thư','Duy Khánh','Kim Ngân','Thiên Phúc','Bảo Ngọc','Minh Anh','Quang Huy','Yến Nhi'];
+const products=[
+{id:'classic',name:'Trà sữa truyền thống',icon:'🧋',price:22000,cost:7000,level:1,stock:'milk',qty:1},
+{id:'brown',name:'Trà sữa trân châu đen',icon:'🧋',price:27000,cost:9000,level:1,stock:'milk',qty:1},
+{id:'strawberry',name:'Trà sữa dâu',icon:'🍓',price:28000,cost:10000,level:3,stock:'syrup',qty:1},
+{id:'taro',name:'Trà sữa khoai môn',icon:'💜',price:30000,cost:11000,level:4,stock:'milk',qty:1},
+{id:'matcha',name:'Matcha latte',icon:'🍵',price:32000,cost:12000,level:5,stock:'milk',qty:1},
+{id:'choco',name:'Trà sữa socola',icon:'🍫',price:30000,cost:11000,level:6,stock:'syrup',qty:1},
+{id:'white',name:'Trà sữa trân châu trắng',icon:'🧋',price:28000,cost:10000,level:7,stock:'milk',qty:1},
+{id:'pearlcheese',name:'Trà sữa thạch phô mai',icon:'🧋',price:33000,cost:13000,level:8,stock:'topping',qty:1},
+{id:'fish',name:'Cá viên chiên',icon:'🍢',price:20000,cost:8000,level:1,stock:'fried',qty:1},
+{id:'sausage',name:'Xúc xích chiên',icon:'🌭',price:18000,cost:7000,level:1,stock:'fried',qty:1},
+{id:'holo',name:'Hồ lô viên chiên',icon:'🍡',price:22000,cost:9000,level:3,stock:'fried',qty:1},
+{id:'quail',name:'Trứng cút chiên',icon:'🥚',price:18000,cost:7000,level:4,stock:'fried',qty:1},
+{id:'corn',name:'Bắp xào bơ',icon:'🌽',price:25000,cost:9000,level:5,stock:'fried',qty:1},
+{id:'shrimp',name:'Tôm viên chiên',icon:'🍤',price:23000,cost:10000,level:7,stock:'fried',qty:1}
+];
+const stockInfo={milk:{name:'Trà, sữa & bột nền',price:80000,icon:'🥛'},syrup:{name:'Siro các vị',price:50000,icon:'🍓'},topping:{name:'Topping tổng hợp',price:65000,icon:'⚫'},fried:{name:'Nguyên liệu đồ chiên',price:70000,icon:'🍢'}};
+const initial=()=>({money:700000,day:1,minute:360,xp:0,level:1,stock:{milk:8,syrup:4,topping:4,fried:8},unlocked:['classic','brown','fish','sausage'],staff:null,staffPaidDay:0,tables:4,appliance:1,orders:[],sales:0,expenses:0,log:['🌸 Khai trương tiệm! M có 700.000đ vốn. Nhập hàng vừa đủ rồi bắt đầu bán nhé.'],closed:false,served:0});
+let s;try{s=JSON.parse(localStorage.getItem('dathanh_save'))||initial()}catch(e){s=initial()}
+let tab='orders';
+function save(){localStorage.setItem('dathanh_save',JSON.stringify(s));note('💾 Đã lưu tiến trình trên thiết bị này.');renderTop()}
+function note(t){s.log.unshift('Ngày '+s.day+' · '+document.getElementById('clock').textContent+' — '+t);s.log=s.log.slice(0,35);renderLog()}
+function renderTop(){document.getElementById('day').textContent='Ngày '+s.day;document.getElementById('dateLabel').textContent=s.closed?'Đã chốt sổ':'Tiệm đang mở';document.getElementById('clock').textContent=fmtTime(s.minute);document.getElementById('money').textContent=moneyFmt(s.money);document.getElementById('level').textContent=s.level;document.getElementById('xp').textContent=s.xp}
+function fmtTime(m){m=Math.min(1439,m);return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
+function esc(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function available(){return products.filter(p=>s.unlocked.includes(p.id))}
+function makeOrders(){if(s.closed)return;while(s.orders.length<Math.min(3,1+Math.floor(s.tables/3))){let list=available().filter(p=>s.stock[p.stock]>0);if(!list.length)break;let p=list[Math.floor(Math.random()*list.length)];s.orders.push({name:names[Math.floor(Math.random()*names.length)],p:p.id,tip:Math.random()<.18?1000:0})}renderCustomers()}
+function renderCustomers(){let el=document.getElementById('customers');el.innerHTML=s.orders.map((o,i)=>{let p=products.find(p=>p.id===o.p);return `<div class="customer"><strong>🙂 ${esc(o.name)}</strong><div class="order">${p.icon} ${p.name}</div><div class="muted">Đang chờ món · ${moneyFmt(p.price)}</div><button ${s.closed?'disabled':''} onclick="serve(${i})">${s.staff?'🤝 Nhân viên phục vụ':'🍳 Làm & giao món'}</button></div>`}).join('')||'<div class="customer">🌼 Chưa có khách đang chờ. Bấm “Tạo khách” để đón khách mới nhé!</div>'}
+function serve(i){if(s.closed)return;let o=s.orders[i];if(!o)return;let p=products.find(p=>p.id===o.p);if(s.stock[p.stock]<=0){note('❌ Hết '+stockInfo[p.stock].name+'. Hãy nhập thêm hàng.');render();return}s.stock[p.stock]-=1;s.money+=p.price+o.tip;s.sales+=p.price+o.tip;s.xp+=10;s.served++;s.orders.splice(i,1);let lv=1+Math.floor(s.xp/100);if(lv>s.level){s.level=lv;note('🎉 Lên cấp '+lv+'! Có món mới có thể mở khóa.')}note('✅ '+(s.staff?'Nhân viên':'M')+' phục vụ '+o.name+' — '+p.name+', thu '+moneyFmt(p.price+o.tip)+'.');if(s.staff&&s.staffPaidDay<s.day&&s.day%30===0){s.staffPaidDay=s.day;s.money-=3000000;s.expenses+=3000000}render();makeOrders()}
+function renderLog(){document.getElementById('log').innerHTML=s.log.map(x=>'<div>'+esc(x)+'</div>').join('')}
+function card(title,desc,btn,disabled=false,icon='📦'){return `<div class="card"><div style="font-size:26px">${icon}</div><h3>${title}</h3><div class="muted">${desc}</div><button ${disabled?'disabled':''} onclick="${btn}">Chọn</button></div>`}
+function render(){renderTop();renderLog();renderCustomers();document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));let c=document.getElementById('content');if(tab==='orders'){c.innerHTML=`<div class="row"><div><b>🛎️ Khách đang chờ: ${s.orders.length}</b><div class="muted">Mỗi đơn bán thành công nhận tiền và 10 XP.</div></div><button onclick="makeOrders()" ${s.closed?'disabled':''}>➕ Tạo khách</button></div><div class="grid" style="margin-top:9px">${available().map(p=>`<div class="card"><div style="font-size:26px">${p.icon}</div><b>${p.name}</b><div class="muted">Giá bán ${moneyFmt(p.price)}<br>Nguyên liệu: ${stockInfo[p.stock].name}<br>Còn ${s.stock[p.stock]} lượt</div></div>`).join('')}</div>`}
+if(tab==='stock'){c.innerHTML='<p class="muted">Nhập từng lô hàng để có nguyên liệu chế biến. Giá là chi phí cho một lô.</p><div class="grid">'+Object.keys(stockInfo).map(k=>{let x=stockInfo[k];return `<div class="card"><div style="font-size:28px">${x.icon}</div><h3>${x.name}</h3><p>Còn <b>${s.stock[k]}</b> lượt chế biến</p><div class="muted">Một lô: +5 lượt · ${moneyFmt(x.price)}</div><button onclick="buyStock('${k}')" ${s.closed||s.money<x.price?'disabled':''}>Nhập hàng</button></div>`}).join('')+'</div>'}
+if(tab==='menu'){c.innerHTML='<p class="muted">Dùng tiền để mở món mới. Cấp độ càng cao càng nhiều món.</p><div class="grid">'+products.filter(p=>!s.unlocked.includes(p.id)).map(p=>`<div class="card"><div style="font-size:27px">${p.icon}</div><h3>${p.name}</h3><div class="muted">Mở ở cấp ${p.level}<br>Giá mở khóa: ${moneyFmt(p.level*18000)}</div><button onclick="unlock('${p.id}')" ${s.closed||s.level<p.level||s.money<p.level*18000?'disabled':''}>🔓 Mở khóa</button></div>`).join('')+'</div>'+(products.every(p=>s.unlocked.includes(p.id))?'<p>🎉 M đã mở khóa toàn bộ món hiện có!</p>':'')}
+if(tab==='staff'){c.innerHTML=s.staff?`<div class="card"><div style="font-size:38px">👩🏻‍🍳</div><h3>${esc(s.staff)}</h3><p>Quản lý quán · Tự động xử lý đơn hàng</p><p>💸 Lương: 3.000.000đ / 30 ngày game</p><button class="pink" onclick="fireStaff()">Cho nghỉ việc</button></div>`:`<div class="card"><div style="font-size:40px">👩🏻‍🍳</div><h3>Tuyển quản lý quán</h3><p>Nhân viên tự động nhận và giao đơn đang chờ. M vẫn phải nhập hàng và quản lý kinh doanh.</p><p>💸 Lương: 3.000.000đ / 30 ngày game</p><button onclick="hireStaff()" ${s.closed||s.money<3000000?'disabled':''}>Thuê nhân viên</button><div class="muted">Cần 3.000.000đ để trả kỳ lương đầu tiên.</div></div>`}
+if(tab==='upgrade'){c.innerHTML=`<div class="grid"><div class="card"><div style="font-size:30px">🪑</div><h3>Thêm bàn ghế</h3><p>Sức chứa: ${s.tables} bàn</p><div class="muted">Thêm 2 bàn · ${moneyFmt(s.tables*35000)}</div><button onclick="upgrade('tables')" ${s.closed||s.money<s.tables*35000?'disabled':''}>Mua thêm</button></div><div class="card"><div style="font-size:30px">🍳</div><h3>Nâng cấp bếp</h3><p>Cấp bếp: ${s.appliance}</p><div class="muted">Tăng sức hút khách · ${moneyFmt(s.appliance*120000)}</div><button onclick="upgrade('appliance')" ${s.closed||s.money<s.appliance*120000?'disabled':''}>Nâng cấp</button></div><div class="card"><div style="font-size:30px">🏮</div><h3>Trang trí quán</h3><p>Quán đẹp và thu hút hơn.</p><div class="muted">Chi phí ${moneyFmt(90000+s.level*10000)}</div><button onclick="decorate()" ${s.closed||s.money<90000+s.level*10000?'disabled':''}>Trang trí</button></div></div>`}
+}
+function buyStock(k){let x=stockInfo[k];if(s.closed||s.money<x.price)return;s.money-=x.price;s.expenses+=x.price;s.stock[k]+=5;note('📦 Nhập '+x.name+' (+5 lượt), chi '+moneyFmt(x.price)+'.');render()}
+function unlock(id){let p=products.find(p=>p.id===id),cost=p.level*18000;if(s.closed||s.level<p.level||s.money<cost)return;s.money-=cost;s.expenses+=cost;s.unlocked.push(id);note('🔓 Mở khóa món '+p.name+' với giá '+moneyFmt(cost)+'.');render()}
+function hireStaff(){if(s.closed||s.staff||s.money<3000000)return;let first=['Minh Anh','Quốc Bảo','Thảo Vy','Hoàng Nam','Gia Hân','Đức Minh','Khánh An','Bảo Trân'];s.staff=first[Math.floor(Math.random()*first.length)];s.money-=3000000;s.expenses+=3000000;s.staffPaidDay=s.day;note('🎉 Tuyển '+s.staff+'. Đã thanh toán kỳ lương đầu 3.000.000đ.');render()}
+function fireStaff(){if(!s.staff)return;note('👋 '+s.staff+' đã nghỉ việc.');s.staff=null;render()}
+function upgrade(type){let cost=type==='tables'?s.tables*35000:s.appliance*120000;if(s.closed||s.money<cost)return;s.money-=cost;s.expenses+=cost;if(type==='tables')s.tables+=2;else s.appliance++;note(type==='tables'?'🪑 Mua thêm 2 bàn ghế.':'🍳 Nâng cấp bếp lên cấp '+s.appliance+'.');render()}
+function decorate(){let cost=90000+s.level*10000;if(s.closed||s.money<cost)return;s.money-=cost;s.expenses+=cost;note('🏮 Trang trí quán, thu hút thêm khách.');s.xp+=5;render()}
+function closeDay(){if(s.closed){nextDay();return}s.closed=true;let profit=s.sales-s.expenses;let report=`<h2>🌙 Tổng kết ngày ${s.day}</h2><div class="card"><p>💰 Doanh thu bán hàng: <b>${moneyFmt(s.sales)}</b></p><p>📦 Chi phí nhập hàng/nâng cấp/lương: <b>${moneyFmt(s.expenses)}</b></p><hr><p>📊 Kết quả kinh doanh: <b style="color:${profit>=0?'#27824b':'#c44545'}">${profit>=0?'LÃI ':'LỖ '}${moneyFmt(Math.abs(profit))}</b></p><p>💵 Tiền hiện có: <b>${moneyFmt(s.money)}</b></p><p>🧑‍🤝‍🧑 Đã phục vụ ${s.served} đơn hàng · ⭐ ${s.xp} XP</p></div><p class="muted">Bản thử nghiệm: lãi/lỗ tính theo dòng tiền phát sinh trong ngày, tiền còn lại được giữ sang ngày sau.</p><button onclick="nextDay()" style="width:100%">🌅 Mở cửa ngày tiếp theo</button>`;document.getElementById('modalbox').innerHTML=report;document.getElementById('modal').classList.add('show');note('🌙 Chốt sổ: doanh thu '+moneyFmt(s.sales)+', chi phí '+moneyFmt(s.expenses)+', '+(profit>=0?'lãi ':'lỗ ')+moneyFmt(Math.abs(profit))+'.');renderTop();render()}
+function nextDay(){document.getElementById('modal').classList.remove('show');if(!s.closed)return;s.day++;s.minute=360;s.closed=false;s.sales=0;s.expenses=0;s.served=0;s.orders=[];note('🌅 Ngày mới bắt đầu! Mở quán và tiếp tục cày tiền.');render();makeOrders()}
+document.getElementById('nextDay').onclick=closeDay;document.getElementById('saveBtn').onclick=save;
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
+function tick(){if(s.closed)return;s.minute+=15;if(s.minute>1439){s.minute=1439;renderTop();closeDay();return}renderTop();if(s.staff&&s.orders.length){serve(0)}else if(Math.random()<.55)makeOrders();if(s.minute%60===0&&s.orders.length===0)makeOrders()}
+render();makeOrders();setInterval(tick,6500);
+</script>
+</body></html>
