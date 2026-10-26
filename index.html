@@ -21,6 +21,32 @@ button:disabled{opacity:.45;cursor:not-allowed}button.secondary{background:#d6ee
 .item{background:#fff7e9;border:2px solid #e4b887;border-radius:13px;padding:8px;text-align:center;min-width:80px;flex:1;font-size:13px;font-weight:800}
 .emoji{font-size:31px;display:block}.seats{display:flex;justify-content:space-evenly;gap:6px;margin:10px auto 0;max-width:650px;flex-wrap:wrap}.seat{background:#e7b3aa;border:2px solid #a86e61;border-radius:8px;padding:7px 9px;font-size:12px}
 .customers{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px}.customer{background:#fffaf0;border:2px solid #e5c39d;border-radius:15px;padding:8px;min-width:140px;max-width:220px;flex:1;font-size:13px}.customer strong{font-size:14px}.customer .order{color:#9b5b40;font-weight:800;margin:4px 0}
+.customer{position:relative;min-width:230px;max-width:320px;padding:11px;background:linear-gradient(145deg,#fffdf7,#fff0dc);border:2px solid #e4c29a;box-shadow:0 4px 0 #e7cfb1;overflow:hidden}
+.customer:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:#ff9ca7}
+.customer-head{display:flex;align-items:center;gap:9px;padding-bottom:8px;border-bottom:1px dashed #e8c7a2}
+.customer-avatar{width:46px;height:46px;border-radius:15px;background:#fce2d8;display:flex;align-items:center;justify-content:center;font-size:29px;flex-shrink:0;border:2px solid #f0c3b1}
+.customer-avatar.male{background:#dff0ff;border-color:#b7d8ef}
+.customer-meta{min-width:0;flex:1}.customer-meta strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.customer-tag{display:inline-block;background:#e3f3df;color:#39734b;border-radius:999px;padding:2px 7px;font-size:10px;font-weight:900;margin-top:3px}
+.order-ticket{background:#fff;border:1px solid #f0dfc7;border-radius:12px;padding:9px;margin:9px 0 7px}
+.order-title{display:flex;align-items:center;gap:8px;font-weight:900;color:#77412e}
+.order-icon{font-size:29px}.order-sub{font-size:11px;color:#987a64;margin-top:2px}
+.order-price{font-weight:1000;color:#28774a;font-size:15px}
+.customer button{width:100%;margin-top:7px}
+.customer .sauce-select{width:100%;padding:7px;border-radius:9px;border:1px solid #dec19b;background:#fff8ec;color:#593d2c;font:inherit;font-size:12px}
+.lobby{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 20% 15%,#ffe4ad 0,transparent 32%),radial-gradient(circle at 85% 80%,#bce8d0 0,transparent 34%),linear-gradient(145deg,#fff6e8,#f8d8bd);overflow:auto}
+.lobby-card{width:min(100%,520px);background:#fffaf0;border:3px solid #e8c59b;border-radius:28px;padding:22px;text-align:center;box-shadow:0 12px 0 #d9ad7d,0 20px 40px #8253322b}
+.lobby-badge{display:inline-block;background:#e1f2df;color:#3e7950;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:900;letter-spacing:.5px}
+.lobby-logo{font-size:66px;margin:10px 0 2px;filter:drop-shadow(0 5px 0 #edcfad)}
+.lobby-card h1{font-size:clamp(25px,7vw,38px);line-height:1.1;color:#a54d43;margin:5px 0 10px}
+.lobby-card p{color:#80634e;line-height:1.55;margin:8px 0 16px}
+.lobby-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:15px 0}
+.lobby-stat{background:#fff0dc;border:1px solid #efd4b0;border-radius:13px;padding:9px 4px;font-size:12px;font-weight:800}
+.lobby-stat b{display:block;font-size:15px;color:#8d4d35;margin-top:3px}
+.lobby-actions{display:grid;gap:10px}.lobby-actions button{padding:14px;font-size:16px}
+button.danger{background:#ffe0e0;color:#9b3838;box-shadow:0 3px 0 #e6b1b1}
+.lobby-note{font-size:11px!important;color:#a08772!important;margin:13px 0 0!important}
+@media(max-width:500px){.customer{min-width:100%;max-width:none}.lobby-card{padding:18px}.lobby-logo{font-size:58px}}
 .panel{background:var(--cream);border:2px solid var(--line);border-radius:18px;padding:12px;margin-top:10px}.tabs{display:flex;gap:6px;overflow:auto;padding:3px 2px 8px}.tabs button{white-space:nowrap;font-size:13px}.tabs button.active{background:#ff9ca7;box-shadow:0 3px 0 #d86c7a}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}.card{background:#fff;border:2px solid #efd6b5;border-radius:14px;padding:10px}.card h3{margin:3px 0;font-size:15px}.muted{color:#8c7462;font-size:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.card button{width:100%;margin-top:7px}.log{max-height:145px;overflow:auto;font-size:13px;line-height:1.5}.bottom{font-size:12px;color:#8b715e;text-align:center;padding:14px}
 .modal{position:fixed;inset:0;background:#3b2927a8;display:none;align-items:center;justify-content:center;padding:15px;z-index:5}.modal.show{display:flex}.modalbox{background:var(--cream);border-radius:20px;padding:18px;max-width:480px;width:100%;border:3px solid var(--line);max-height:85vh;overflow:auto}.modalbox h2{margin-top:0}
 @media(max-width:500px){.wrap{padding:7px}.top{gap:5px}.stat{padding:8px 4px;font-size:13px}.scene{padding:8px;min-height:250px}.stall{margin-top:25px;padding:8px}.item{min-width:68px;padding:5px}.emoji{font-size:25px}.panel{padding:9px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.customer{min-width:125px}}
@@ -48,7 +74,7 @@ button:disabled{opacity:.45;cursor:not-allowed}button.secondary{background:#d6ee
     <div class="customers" id="customers"></div>
   </section>
   <section class="panel">
-    <div class="row"><h2 style="margin:2px 0 8px;font-size:19px">📋 Quản lý tiệm</h2><button class="pink" id="nextDay">🌙 Chốt ngày</button></div>
+    <div class="row"><h2 style="margin:2px 0 8px;font-size:19px">📋 Quản lý tiệm</h2><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><button class="danger" id="resetBtn">🗑️ Chơi lại từ đầu</button><button class="pink" id="nextDay">🌙 Chốt ngày</button></div></div>
     <div class="tabs" id="tabs">
       <button class="active" data-tab="orders">🛎️ Khách & order</button><button data-tab="stock">📦 Nhập kho</button><button data-tab="menu">🔓 Mở khóa món</button><button data-tab="staff">👩‍🍳 Nhân viên</button><button data-tab="prices">💸 Giá bán</button><button data-tab="upgrade">🏡 Nâng cấp</button>
     </div>
@@ -58,12 +84,31 @@ button:disabled{opacity:.45;cursor:not-allowed}button.secondary{background:#d6ee
     <div class="row"><h3 style="margin:0">📒 Nhật ký kinh doanh</h3><button class="secondary" id="saveBtn">💾 Lưu</button></div>
     <div class="log" id="log"></div>
   </section>
-  <div class="bottom">Bản cập nhật 0.2 · Tiến trình lưu trên trình duyệt này · Game hư cấu lấy cảm hứng từ quán ăn vặt Việt Nam.</div>
+  <div class="bottom">Bản cập nhật 0.3 · Tiến trình lưu trên trình duyệt này · Game hư cấu lấy cảm hứng từ quán ăn vặt Việt Nam.</div>
+</div>
+<div class="lobby" id="lobby">
+  <div class="lobby-card">
+    <span class="lobby-badge">🎮 GAME QUẢN LÝ QUÁN · BẢN 0.3</span>
+    <div class="lobby-logo">🧋🍢</div>
+    <h1>TIỆM TRÀ SỮA<br>& ĂN VẶT ĐÀ THÀNH</h1>
+    <p>Ghé quán vỉa hè gần trường học, phục vụ khách Đà Thành, nhập hàng, tuyển nhân viên và cày tiền để nâng cấp tiệm!</p>
+    <div class="lobby-stats">
+      <div class="lobby-stat">💵 Vốn khởi đầu<b>700.000đ</b></div>
+      <div class="lobby-stat">🕕 Giờ bán<b>06:00–23:59</b></div>
+      <div class="lobby-stat">⭐ Mục tiêu<b>Cày & mở khóa</b></div>
+    </div>
+    <div class="lobby-actions">
+      <button id="startBtn">▶️ BẮT ĐẦU / VÀO TIỆM</button>
+      <button class="secondary" id="lobbyResetBtn">🔄 CHƠI LẠI TỪ ĐẦU · XÓA DATA</button>
+    </div>
+    <p class="lobby-note">Tiến trình được lưu trên trình duyệt của thiết bị này. Xóa data sẽ không thể khôi phục.</p>
+  </div>
 </div>
 <div class="modal" id="modal"><div class="modalbox" id="modalbox"></div></div>
 <script>
 const moneyFmt=n=>Math.round(n).toLocaleString('vi-VN')+'đ';
-const names=['Tuấn Kiệt','Ngọc Anh','Đức Huy','Khánh Linh','Thanh Tùng','Gia Hân','Minh Khang','Bảo Trân','Quốc Bảo','Thảo Vy','Hoàng Nam','Phương Nhi','Nhật Minh','Hà My','Trung Kiên','Mai Chi','Anh Thư','Duy Khánh','Kim Ngân','Thiên Phúc','Bảo Ngọc','Minh Anh','Quang Huy','Yến Nhi'];
+const maleNames=['Tuấn Kiệt','Đức Huy','Thanh Tùng','Minh Khang','Quốc Bảo','Hoàng Nam','Trung Kiên','Duy Khánh','Thiên Phúc','Quang Huy','Gia Bảo','Hữu Phước','Nhật Minh','Đình Khang','Trọng Nghĩa'];
+const femaleNames=['Ngọc Anh','Khánh Linh','Gia Hân','Bảo Trân','Thảo Vy','Phương Nhi','Hà My','Mai Chi','Anh Thư','Kim Ngân','Bảo Ngọc','Yến Nhi','Mỹ Duyên','Thu Hà','Thanh Trúc'];
 const products=[
 {id:'classic',name:'Trà sữa truyền thống',icon:'🧋',price:22000,cost:7000,level:1,stock:'milk',qty:1},
 {id:'brown',name:'Trà sữa trân châu đen',icon:'🧋',price:27000,cost:9000,level:1,stock:'milk',qty:1},
@@ -87,6 +132,8 @@ const shopperBatch=5;
 const initial=()=>({money:700000,day:1,minute:360,xp:0,level:1,stock:{milk:8,syrup:4,topping:4,fried:8},unlocked:['classic','brown','fish','sausage'],staff:null,staffPaidDay:0,shopper:null,shopperPaidDay:0,prices:{},tables:4,appliance:1,orders:[],sales:0,expenses:0,log:['🌸 Khai trương tiệm! M có 700.000đ vốn. Nhập hàng vừa đủ rồi bắt đầu bán nhé.'],closed:false,served:0});
 let s;try{const oldSave=JSON.parse(localStorage.getItem('dathanh_save'));s=oldSave?({...initial(),...oldSave,stock:{...initial().stock,...(oldSave.stock||{})},prices:oldSave.prices||{},shopper:oldSave.shopper||null,shopperPaidDay:oldSave.shopperPaidDay||0}):initial()}catch(e){s=initial()}
 let tab='orders';
+let gameStarted=false;
+if(s.orders)s.orders.forEach(o=>{if(!o.gender)o.gender=Math.random()<.5?'male':'female';});
 function save(){localStorage.setItem('dathanh_save',JSON.stringify(s));note('💾 Đã lưu tiến trình trên thiết bị này.');renderTop()}
 function note(t){s.log.unshift('Ngày '+s.day+' · '+document.getElementById('clock').textContent+' — '+t);s.log=s.log.slice(0,35);renderLog()}
 function renderTop(){document.getElementById('day').textContent='Ngày '+s.day;document.getElementById('dateLabel').textContent=s.closed?'Đã chốt sổ':'Tiệm đang mở';document.getElementById('clock').textContent=fmtTime(s.minute);document.getElementById('money').textContent=moneyFmt(s.money);document.getElementById('level').textContent=s.level;document.getElementById('xp').textContent=s.xp}
@@ -94,9 +141,9 @@ function fmtTime(m){m=Math.min(1439,m);return String(Math.floor(m/60)).padStart(
 function esc(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function available(){return products.filter(p=>s.unlocked.includes(p.id))}
 function priceOf(p){return Math.max(1000,Number(s.prices?.[p.id]??p.price))}
-function makeOrders(){if(s.closed)return;while(s.orders.length<Math.min(3,1+Math.floor(s.tables/3))){let list=available().filter(p=>s.stock[p.stock]>0);if(!list.length)break;let p=list[Math.floor(Math.random()*list.length)];s.orders.push({name:names[Math.floor(Math.random()*names.length)],p:p.id,tip:Math.random()<.18?1000:0,sauce:friedIds.includes(p.id)?sauces[Math.floor(Math.random()*sauces.length)]:''})}renderCustomers()}
+function makeOrders(){if(!gameStarted||s.closed)return;while(s.orders.length<Math.min(3,1+Math.floor(s.tables/3))){let list=available().filter(p=>s.stock[p.stock]>0);if(!list.length)break;let gender=Math.random()<.5?'male':'female';let pool=gender==='male'?maleNames:femaleNames;let p=list[Math.floor(Math.random()*list.length)];s.orders.push({name:pool[Math.floor(Math.random()*pool.length)],gender,p:p.id,tip:Math.random()<.18?1000:0,sauce:friedIds.includes(p.id)?sauces[Math.floor(Math.random()*sauces.length)]:''})}renderCustomers()}
 function setSauce(i,value){if(s.orders[i]&&sauces.includes(value)){s.orders[i].sauce=value;renderCustomers()}}
-function renderCustomers(){let el=document.getElementById('customers');el.innerHTML=s.orders.map((o,i)=>{let p=products.find(p=>p.id===o.p);let sauce=friedIds.includes(p.id)?`<label style="display:block;margin:5px 0 3px;font-size:12px;font-weight:800">🥣 Sốt chấm <select onchange="setSauce(${i},this.value)" style="max-width:100%;padding:5px;border-radius:8px;border:1px solid #d8b998;background:#fff8ec">${sauces.map(x=>`<option ${o.sauce===x?'selected':''}>${x}</option>`).join('')}</select></label>`:'';return `<div class="customer"><strong>🙂 ${esc(o.name)}</strong><div class="order">${p.icon} ${p.name}</div>${sauce}<div class="muted">Đang chờ món · ${moneyFmt(priceOf(p))}</div><button ${s.closed?'disabled':''} onclick="serve(${i})">${s.staff?'🤝 Nhân viên phục vụ':'🍳 Làm & giao món'}</button></div>`}).join('')||'<div class="customer">🌼 Chưa có khách đang chờ. Bấm “Tạo khách” để đón khách mới nhé!</div>'}
+function renderCustomers(){let el=document.getElementById('customers');el.innerHTML=s.orders.map((o,i)=>{let p=products.find(p=>p.id===o.p);let avatar=o.gender==='male'?'🙎‍♂️':'🙎‍♀️';let sauce=friedIds.includes(p.id)?`<label style="display:block;margin:6px 0 3px;font-size:12px;font-weight:900">🥣 Chọn sốt chấm<select class="sauce-select" onchange="setSauce(${i},this.value)">${sauces.map(x=>`<option ${o.sauce===x?'selected':''}>${x}</option>`).join('')}</select></label>`:'';return `<div class="customer"><div class="customer-head"><div class="customer-avatar ${o.gender==='male'?'male':''}">${avatar}</div><div class="customer-meta"><strong>${esc(o.name)}</strong><span class="customer-tag">🛎️ KHÁCH ĐANG ĐỢI</span></div><span style="font-size:11px;color:#a17e64;font-weight:900">#${String(i+1).padStart(2,'0')}</span></div><div class="order-ticket"><div class="order-title"><span class="order-icon">${p.icon}</span><span>${p.name}</span></div><div class="order-sub">Đơn gọi món · ${stockInfo[p.stock].name}</div>${sauce}<div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:8px"><span class="muted">Thành tiền</span><span class="order-price">${moneyFmt(priceOf(p)+o.tip)}</span></div></div><button ${s.closed?'disabled':''} onclick="serve(${i})">${s.staff?'🤝 Nhân viên làm & giao món':'🍳 Làm món và giao khách'}</button></div>`}).join('')||'<div class="customer" style="text-align:center;padding:18px"><div style="font-size:36px">🪑🌼</div><strong>Chưa có khách gọi món</strong><div class="muted" style="margin-top:5px">Mở cửa rồi bấm “Tạo khách” để đón lượt khách đầu tiên nha!</div></div>'}
 function serve(i){if(s.closed)return;let o=s.orders[i];if(!o)return;let p=products.find(p=>p.id===o.p);if(s.stock[p.stock]<=0){note('❌ Hết '+stockInfo[p.stock].name+'. Hãy nhập thêm hàng hoặc thuê nhân viên đi chợ.');render();return}let sale=priceOf(p)+o.tip;s.stock[p.stock]-=1;s.money+=sale;s.sales+=sale;s.xp+=10;s.served++;s.orders.splice(i,1);let lv=1+Math.floor(s.xp/100);if(lv>s.level){s.level=lv;note('🎉 Lên cấp '+lv+'! Có món mới có thể mở khóa.')}note('✅ '+(s.staff?'Nhân viên':'M')+' phục vụ '+o.name+' — '+p.name+(o.sauce?' kèm '+o.sauce:'')+', thu '+moneyFmt(sale)+'.');if(s.staff&&s.staffPaidDay<s.day&&s.day%30===0){s.staffPaidDay=s.day;s.money-=3000000;s.expenses+=3000000}render();makeOrders()}
 function renderLog(){document.getElementById('log').innerHTML=s.log.map(x=>'<div>'+esc(x)+'</div>').join('')}
 function card(title,desc,btn,disabled=false,icon='📦'){return `<div class="card"><div style="font-size:26px">${icon}</div><h3>${title}</h3><div class="muted">${desc}</div><button ${disabled?'disabled':''} onclick="${btn}">Chọn</button></div>`}
@@ -115,14 +162,19 @@ function changePrice(id,delta){if(s.closed)return;let p=products.find(x=>x.id===
 function resetPrice(id){let p=products.find(x=>x.id===id);if(!p)return;delete s.prices[id];note('↩️ Đưa giá '+p.name+' về giá gốc '+moneyFmt(p.price)+'.');render()}
 function hireShopper(){if(s.closed||s.shopper||s.money<2000000)return;let list=['Hữu Phước','Thanh Bình','Mỹ Duyên','Trọng Nghĩa','Thu Hà','Đình Khang'];s.shopper=list[Math.floor(Math.random()*list.length)];s.money-=2000000;s.expenses+=2000000;s.shopperPaidDay=s.day;note('🛵 Thuê nhân viên đi chợ '+s.shopper+'. Đã thanh toán kỳ lương đầu 2.000.000đ.');render()}
 function fireShopper(){if(!s.shopper)return;note('👋 '+s.shopper+' đã nghỉ việc đi chợ.');s.shopper=null;render()}
-function shopperCheck(){if(s.closed||!s.shopper)return;for(const k of Object.keys(stockInfo)){if(s.stock[k]<=1){const x=stockInfo[k];if(s.money>=x.price){s.money-=x.price;s.expenses+=x.price;s.stock[k]+=shopperBatch;note('🛵 '+s.shopper+' đi chợ nhập '+x.name+' +'+shopperBatch+' lượt, chi '+moneyFmt(x.price)+'.');render();} } }if(s.shopper&&s.day%30===0&&s.shopperPaidDay<s.day){s.shopperPaidDay=s.day;s.money-=2000000;s.expenses+=2000000;note('💸 Đã trả lương tháng cho nhân viên đi chợ: 2.000.000đ.');render()}}
+function shopperCheck(){if(!gameStarted||s.closed||!s.shopper)return;for(const k of Object.keys(stockInfo)){if(s.stock[k]<=1){const x=stockInfo[k];if(s.money>=x.price){s.money-=x.price;s.expenses+=x.price;s.stock[k]+=shopperBatch;note('🛵 '+s.shopper+' đi chợ nhập '+x.name+' +'+shopperBatch+' lượt, chi '+moneyFmt(x.price)+'.');render();} } }if(s.shopper&&s.day%30===0&&s.shopperPaidDay<s.day){s.shopperPaidDay=s.day;s.money-=2000000;s.expenses+=2000000;note('💸 Đã trả lương tháng cho nhân viên đi chợ: 2.000.000đ.');render()}}
 function upgrade(type){let cost=type==='tables'?s.tables*35000:s.appliance*120000;if(s.closed||s.money<cost)return;s.money-=cost;s.expenses+=cost;if(type==='tables')s.tables+=2;else s.appliance++;note(type==='tables'?'🪑 Mua thêm 2 bàn ghế.':'🍳 Nâng cấp bếp lên cấp '+s.appliance+'.');render()}
 function decorate(){let cost=90000+s.level*10000;if(s.closed||s.money<cost)return;s.money-=cost;s.expenses+=cost;note('🏮 Trang trí quán, thu hút thêm khách.');s.xp+=5;render()}
 function closeDay(){if(s.closed){nextDay();return}s.closed=true;let profit=s.sales-s.expenses;let report=`<h2>🌙 Tổng kết ngày ${s.day}</h2><div class="card"><p>💰 Doanh thu bán hàng: <b>${moneyFmt(s.sales)}</b></p><p>📦 Chi phí nhập hàng/nâng cấp/lương: <b>${moneyFmt(s.expenses)}</b></p><hr><p>📊 Kết quả kinh doanh: <b style="color:${profit>=0?'#27824b':'#c44545'}">${profit>=0?'LÃI ':'LỖ '}${moneyFmt(Math.abs(profit))}</b></p><p>💵 Tiền hiện có: <b>${moneyFmt(s.money)}</b></p><p>🧑‍🤝‍🧑 Đã phục vụ ${s.served} đơn hàng · ⭐ ${s.xp} XP</p></div><p class="muted">Bản thử nghiệm: lãi/lỗ tính theo dòng tiền phát sinh trong ngày, tiền còn lại được giữ sang ngày sau.</p><button onclick="nextDay()" style="width:100%">🌅 Mở cửa ngày tiếp theo</button>`;document.getElementById('modalbox').innerHTML=report;document.getElementById('modal').classList.add('show');note('🌙 Chốt sổ: doanh thu '+moneyFmt(s.sales)+', chi phí '+moneyFmt(s.expenses)+', '+(profit>=0?'lãi ':'lỗ ')+moneyFmt(Math.abs(profit))+'.');renderTop();render()}
 function nextDay(){document.getElementById('modal').classList.remove('show');if(!s.closed)return;s.day++;s.minute=360;s.closed=false;s.sales=0;s.expenses=0;s.served=0;s.orders=[];note('🌅 Ngày mới bắt đầu! Mở quán và tiếp tục cày tiền.');render();makeOrders()}
 document.getElementById('nextDay').onclick=closeDay;document.getElementById('saveBtn').onclick=save;
+document.getElementById('resetBtn').onclick=resetGame;
+document.getElementById('lobbyResetBtn').onclick=resetGame;
+document.getElementById('startBtn').onclick=enterGame;
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
-function tick(){if(s.closed)return;s.minute+=15;if(s.minute>1439){s.minute=1439;renderTop();closeDay();return}renderTop();if(Math.random()<.55)makeOrders();if(s.minute%60===0&&s.orders.length===0)makeOrders()}
-render();makeOrders();setInterval(tick,6500);setInterval(()=>{if(!s.closed&&s.staff&&s.orders.length)serve(0)},1600);setInterval(shopperCheck,3200);
+function enterGame(){gameStarted=true;document.getElementById('lobby').style.display='none';render();if(!s.closed&&s.orders.length===0)makeOrders();note('🚪 Mở cửa tiệm, bắt đầu ngày bán hàng!');render()}
+function resetGame(){if(!confirm('Chơi lại từ đầu sẽ XÓA TOÀN BỘ data đã cày trên trình duyệt này (tiền, cấp, kho, nhân viên, giá bán). Không thể hoàn tác. Mày chắc chắn muốn xóa?'))return;localStorage.removeItem('dathanh_save');s=initial();tab='orders';gameStarted=false;document.getElementById('modal').classList.remove('show');document.getElementById('lobby').style.display='flex';render();document.getElementById('lobby').scrollTop=0}
+function tick(){if(!gameStarted||s.closed)return;s.minute+=15;if(s.minute>1439){s.minute=1439;renderTop();closeDay();return}renderTop();if(Math.random()<.55)makeOrders();if(s.minute%60===0&&s.orders.length===0)makeOrders()}
+render();document.getElementById('lobby').style.display='flex';setInterval(tick,6500);setInterval(()=>{if(gameStarted&&!s.closed&&s.staff&&s.orders.length)serve(0)},1600);setInterval(shopperCheck,3200);
 </script>
 </body></html>
